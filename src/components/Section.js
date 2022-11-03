@@ -1,35 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
 import AOS from 'aos';
-function Section({title, description,leftBtnText,rightBtnText , backgroundImg}) {
-  AOS.init();
-    return (
-        <Wrap  bgImage = { backgroundImg} >
-        <div data-aos = {"fade-down"}  data-aos-delay="4000" data-aos-duration="4000">
-        <ItemText  >
-                <h1>{title}</h1>
-                <p>{description} </p>
-            </ItemText>
-            </div>
-          
-          <Button>
-          <div data-aos = {"fade-down"}  data-aos-delay="4000" data-aos-duration="4000">
-          <ButtonGroup>
-                <LeftButton>
-                  {leftBtnText}
-                </LeftButton>
-                { rightBtnText && 
-                  <RightButton>
-                     {rightBtnText}
-                  </RightButton>
-                }
-            </ButtonGroup>
-            </div>
-            <DownArrow  src="/images/down-arrow.svg" />
-            
-          </Button>
-        </Wrap>
-    )
+function Section({ title, description, leftBtnText, rightBtnText, backgroundImg }) {
+
+  return (
+    <Wrap bgImage={backgroundImg} >
+
+      <ItemText  >
+        <h1>{title}</h1>
+        <p>{description} </p>
+      </ItemText>
+
+
+      <Button>
+
+        <ButtonGroup>
+          <LeftButton>
+            {leftBtnText}
+          </LeftButton>
+          {rightBtnText &&
+            <RightButton>
+              {rightBtnText}
+            </RightButton>
+          }
+        </ButtonGroup>
+
+        <DownArrow src="/images/down-arrow.svg" />
+
+      </Button>
+    </Wrap>
+  )
 }
 
 const Wrap = styled.div`
@@ -38,7 +38,7 @@ const Wrap = styled.div`
  background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
- background-image: ${props =>` url('/images/${props.bgImage}')`};
+ background-image: ${props => ` url('/images/${props.bgImage}')`};
  display: flex;
  flex-direction: column;
  justify-content: space-between;
@@ -78,6 +78,8 @@ const RightButton = styled(LeftButton)`
   color: black;
 `
 const DownArrow = styled.img`
+  justify-content: center;
+  align-items: center;
   
   height: 40px;
   overflow-x: hidden;
@@ -85,6 +87,6 @@ const DownArrow = styled.img`
 `
 const Button = styled.div`
  
-` 
+`
 
 export default Section
