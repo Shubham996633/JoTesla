@@ -42,6 +42,32 @@ function Home() {
                 rightBtnText='Existing inventory'
             />
 
+            <Section
+
+                title='Lowest Cost Solar Panel in America'
+                description='Money-back guarnatee'
+                backgroundImg='solar-panel.jpg'
+                leftBtnText='Order now'
+                rightBtnText='Learn more'
+            />
+
+            <Section
+
+                title='Solar for New Roofs'
+                description='Solar Roof Costs less than a new Roof'
+                backgroundImg='solar-roof.jpg'
+                leftBtnText='Order now'
+                rightBtnText='Learn more'
+            />
+
+            <Section
+
+                title='Accessories'
+                description=''
+                backgroundImg='accessories.jpg'
+                leftBtnText='Shop Now'
+            />
+
         </Container>
     )
 }
