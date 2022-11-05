@@ -9,6 +9,7 @@ import { Close } from '@material-ui/icons';
 function Header() {
 
     const [burgerStatus, setBurgerStatus] = useState(false)
+    const cars = useSelector(selectCars)
 
 
     return (
@@ -19,10 +20,11 @@ function Header() {
                 <img src="/images/logo.svg" alt="" />
             </a>
             <Menu>
-                <a href="#">Model S</a>
-                <a href="#">Model 3</a>
-                <a href="#">Model X</a>
-                <a href="#">Model Y</a>
+                {cars && cars.map((car, index) => (
+                    <a key={index} href="#">{car}</a>
+
+                ))}
+
 
 
 
@@ -37,14 +39,15 @@ function Header() {
 
                     <CustomClose onClick={() => setBurgerStatus(false)} />
                 </CloseWrapper>
+                {cars && cars.map((car, index) => (
+                    <li key={index}><a href='#'>{car}</a></li>
+
+                ))}
                 <li><a href='#'>Existing Inventory</a></li>
                 <li><a href='#'>Used Inventory</a></li>
                 <li><a href='#'>Trade-in</a></li>
                 <li><a href='#'>Cybertrunk</a></li>
-                <li><a href='#'>Roadster</a></li>
-                <li><a href='#'>Solar Panels</a></li>
-                <li><a href='#'>Roadster</a></li>
-                <li><a href='#'>Roadster</a></li>
+
             </BurgerNav>
 
 
