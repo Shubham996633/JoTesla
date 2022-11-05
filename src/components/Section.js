@@ -33,21 +33,23 @@ function Section({ title, description, leftBtnText, rightBtnText, backgroundImg 
 }
 
 const Wrap = styled.div`
- width: 100vw;
- height: 100vh;
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- background-image: ${props => ` url('/images/${props.bgImage}')`};
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- align-items: center;
- 
+
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: ${props => ` url('/images/${props.bgImage}')`};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
 `
 const ItemText = styled.div`
  padding-top: 18vh;
  text-align: center;
+ z-index: 10;
 `
 const ButtonGroup = styled.div`
  display: flex; 
@@ -80,7 +82,8 @@ const RightButton = styled(LeftButton)`
 const DownArrow = styled.img`
   justify-content: center;
   align-items: center;
-  
+  margin-left: 45%;
+  margin-right: 50%;
   height: 40px;
   overflow-x: hidden;
   animation: animateDown Infinite 1.5s;
